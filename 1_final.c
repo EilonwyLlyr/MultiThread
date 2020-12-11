@@ -57,6 +57,10 @@ int main(int argc, char* argv[]){
     elapsed = finish - start;
     printf("Paralle time: %lf\n", elapsed);
 
+    print_array(a);
+    print_array(k);
+    print_array(b);
+
     GET_TIME(start);
     dist_Enum_sort_serial();
     GET_TIME(finish);
@@ -80,7 +84,7 @@ void* dist_Enum_sort(void* rank){
     for(long long i = 0; i < n; i++){
         for(long long j = my_first_i; j < my_last_i; j++){
             if(a[i] > a[j])
-                k[i]++;
+                local_k[i]++;
         }
     }
 

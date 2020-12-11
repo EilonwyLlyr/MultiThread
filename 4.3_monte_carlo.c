@@ -51,7 +51,6 @@ void* Monte_carlo(void* rank){
     long long my_hits = 0;
     double x, y;
     double distance_square;
-    srand(time(0));
     for(int i = my_first_i; i < my_last_i; i++){
         x = (double)rand()/RAND_MAX*2.0 - 1.0;
         y = (double)rand()/RAND_MAX*2.0 - 1.0;
